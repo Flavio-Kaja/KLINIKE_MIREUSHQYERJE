@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add New DIETA Item</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <%- include('partial/navbar.ejs') %>
+  <body>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <h1>Shto nje diete</h1>
+          <form action="/add" method="POST">
+            <div class="form-group">
+              <label for="id">ID:</label>
+              <input
+                type="text"
+                id="id"
+                name="id"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="time">Time:</label>
+              <input
+                type="text"
+                id="time"
+                name="time"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="calories">Calories:</label>
+              <input
+                type="number"
+                id="calories"
+                name="calories"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="carbs">Carbs:</label>
+              <input
+                type="number"
+                id="carbs"
+                name="carbs"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="fiber">Fiber:</label>
+              <input
+                type="number"
+                id="fiber"
+                name="fiber"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="protein">Protein:</label>
+              <input
+                type="number"
+                id="protein"
+                name="protein"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="fat">Fat:</label>
+              <input
+                type="number"
+                id="fat"
+                name="fat"
+                class="form-control"
+                required
+              />
+            </div>
+            <input
+              type="submit"
+              class="btn btn-primary mt-3"
+              value="Shto dieten"
+            />
+          </form>
+          <p><a href="/">Lista</a></p>
+        </div>
+        <div class="col-lg-6 d-flex align-items-center justify-content-center">
+          <img
+            src="https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1665&q=80"
+            alt="placeholder image"
+            width="400px"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-w4LA71uL9Vjkr4lrnNFyGHrfo/pe+E32AIn/lxkfKn/PwN/6lPySZKamrtXsWQl6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

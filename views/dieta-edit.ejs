@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit DIETA Item</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <%- include('partial/navbar.ejs') %>
+  <body>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <h1>Edito dieten</h1>
+          <form action="/edit/<%= dieta.Id_dieta %>" method="POST">
+            <div class="form-group">
+              <input
+                type="text"
+                id="Id_dieta"
+                name="Id_dieta"
+                class="form-control"
+                hidden
+                value="<%= dieta.Id_dieta %>"
+              />
+            </div>
+            <div class="form-group">
+              <label for="Vakti">Vakti:</label>
+              <input
+                type="text"
+                id="Vakti"
+                name="Vakti"
+                class="form-control"
+                required
+                value="<%= dieta.Vakti %>"
+              />
+            </div>
+            <div class="form-group">
+              <label for="Emri">Emri:</label>
+              <input
+                type="text"
+                id="Emri"
+                name="Emri"
+                class="form-control"
+                required
+                value="<%= dieta.Emri %>"
+              />
+            </div>
+            <div class="form-group">
+              <label for="Kalori">Calories:</label>
+              <input
+                type="number"
+                id="Kalori"
+                name="Kalori"
+                class="form-control"
+                required
+                value="<%= dieta.Kalori %>"
+              />
+            </div>
+            <div class="form-group">
+              <label for="Karbohidrate">Karbohidrate:</label>
+              <input
+                type="number"
+                id="Karbohidrate"
+                name="Karbohidrate"
+                class="form-control"
+                required
+                value="<%= dieta.Karbohidrate %>"
+              />
+            </div>
+            <div class="form-group">
+              <label for="fiber">Fiber:</label>
+              <input
+                type="number"
+                id="Fibra"
+                name="Fibra"
+                class="form-control"
+                required
+                value="<%= dieta.Fibra %>"
+              />
+            </div>
+            <div class="form-group">
+              <label for="protein">Proteina:</label>
+              <input
+                type="number"
+                id="Proteina"
+                name="Proteina"
+                class="form-control"
+                required
+                value="<%= dieta.Proteina %>"
+              />
+            </div>
+            <div class="form-group">
+              <label for="Yndyrna">Yndyrna:</label>
+              <input
+                type="number"
+                id="Yndyrna"
+                name="Yndyrna"
+                class="form-control"
+                value="<%= dieta.Yndyrna %>"
+                required
+              />
+            </div>
+            <input
+              type="submit"
+              class="btn btn-primary mt-3"
+              value="Edito dieten"
+            />
+          </form>
+          <p><a href="/">Lista</a></p>
+        </div>
+        <div class="col-lg-6 d-flex align-items-center justify-content-center">
+          <img
+            src="https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1665&q=80"
+            alt="placeholder image"
+            width="400px"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-w4LA71uL9Vjkr4lrnNFyGHrfo/pe+E32AIn/lxkfKn/PwN/6lPySZKamrtXsWQl6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

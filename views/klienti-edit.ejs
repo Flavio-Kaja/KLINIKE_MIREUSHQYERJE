@@ -1,0 +1,160 @@
+<!-- views/edit-klienti.ejs -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Klienti</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css"
+    />
+  </head>
+  
+  <%- include('partial/navbar.ejs') %>
+  <body>
+    <div class="container">
+      <h1>Edito KlientinKlienti</h1>
+      <form method="post" action="/klienti/edit/<%=klienti.K_id%>">
+        <input type="hidden" name="K_id" name="K_id" value="<?=klienti.K_id%>" />
+        <div class="form-group">
+          <label for="emer">Emer:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="emer"
+            name="emer"
+            value="<%=klienti.Emer%>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="mbiemer">Mbiemer:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="mbiemer"
+            name="mbiemer"
+            value="<%=klienti.Mbiemer%>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="gjinia">Gjinia:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="gjinia"
+            name="gjinia"
+            value="<%=klienti.Gjinia%>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="ditelindja">Ditelindja:</label>
+          <input
+            type="date"
+            class="form-control"
+            id="ditelindja"
+            name="ditelindja"
+            value="<%=klienti.Ditelindja%>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="adresa">Adresa:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="adresa"
+            name="adresa"
+            value="<%=klienti.Adresa%>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="nr_telefoni">Nr_telefoni:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nr_telefoni"
+            name="nr_telefoni"
+            value="<%=klienti.Nr_telefoni%>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            value="<%=klienti.Email%>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="passwordi">Passwordi:</label>
+          <input
+            type="password"
+            class="form-control"
+            id="passwordi"
+            name="passwordi"
+          />
+        </div>
+        <div class="form-group">
+          <label for="gjatesia">Gjatesia:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="gjatesia"
+            name="gjatesia"
+            value="<%=klienti.Gjatesia%>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="pesha">Pesha:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="pesha"
+            name="pesha"
+            value="<%=klienti.Pesha%>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="kondicioni_fizik">Kondicioni Fizik:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="kondicioni_fizik"
+            name="kondicioni_fizik"
+            value="<%=klienti.kondicioni_fizik%>"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="aktiviteti">aktiviteti:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="aktiviteti"
+            name="aktiviteti"
+            value="<%=klienti.Aktiviteti%>"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="kalori_ditore">Kalori ditore:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="kalori_ditore"
+            name="kalori_ditore"
+            value="<%=klienti.Kalori_ditore%>"
+          />
+        </div>
+        
+        </div>
+          <div class="col-12 mt-4 offset-sm-2">
+            <button type="submit" class="btn btn-success">Edito Klientin</button>
+          </div>
+      </form>
+    </div>
+  </body>
+</html>

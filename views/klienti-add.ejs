@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shto klientim</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css"
+    />
+  </head>
+
+  <%- include('partial/navbar.ejs') %>
+  <div class="container mt-4">
+    <h1>Krijo Klientin</h1>
+    <form
+      method="POST"
+      action="/klienti/add"
+      class="needs-validation"
+      novalidate
+    >
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="emer" class="form-label">Id</label>
+          <input
+            type="number"
+            class="form-control"
+            id="k_id"
+            name="k_id"
+            required
+          />
+          <div class="invalid-feedback"></div>
+        </div>
+        <div class="col-md-6">
+          <label for="emer" class="form-label">Emer</label>
+          <input
+            type="text"
+            class="form-control"
+            id="emer"
+            name="emer"
+            required
+          />
+          <div class="invalid-feedback">Please enter a first name.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="mbiemer" class="form-label">Mbiemer</label>
+          <input
+            type="text"
+            class="form-control"
+            id="mbiemer"
+            name="mbiemer"
+            required
+          />
+          <div class="invalid-feedback">Please enter a last name.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="gjinia" class="form-label">Gjinia</label>
+          <select class="form-select" id="gjinia" name="gjinia">
+            <option value="" selected>Ginjina</option>
+            <option value="M">M</option>
+            <option value="F">F</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="ditelindja" class="form-label">Ditelindja</label>
+          <input
+            type="date"
+            class="form-control"
+            id="ditelindja"
+            name="ditelindja"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="adresa" class="form-label">Adresa</label>
+          <input type="text" class="form-control" id="adresa" name="adresa" />
+        </div>
+        <div class="col-md-6">
+          <label for="nr_telefoni" class="form-label">Nr telefoni</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nr_telefoni"
+            name="nr_telefoni"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            required
+          />
+          <div class="invalid-feedback">
+            Please enter a valid email address.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="passwordi" class="form-label">Passwordi</label>
+          <input
+            type="password"
+            class="form-control"
+            id="passwordi"
+            name="passwordi"
+            required
+          />
+          <div class="invalid-feedback">Please enter a password.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="gjatesia" class="form-label">Gjatesia</label>
+          <input
+            type="text"
+            class="form-control"
+            id="gjatesia"
+            name="gjatesia"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="pesha" class="form-label">Pesha</label>
+          <input type="text" class="form-control" id="pesha" name="pesha" />
+        </div>
+        <div class="col-md-6">
+          <label for="kondicioni_fizik" class="form-label"
+            >Kondicioni Fizik</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="kondicioni_fizik"
+            name="kondicioni_fizik"
+            placeholder="Kondicioni Fizik"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="aktiviteti" class="form-label">Aktiviteti</label>
+          <input
+            type="text"
+            class="form-control"
+            id="aktiviteti"
+            name="aktiviteti"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="kalori_ditore" class="form-label">Kalori Ditore</label>
+          <input
+            type="number"
+            class="form-control"
+            id="kalori_ditore"
+            name="kalori_ditore"
+            placeholder="Kalori Ditore"
+          />
+        </div>
+        <div class="col-md-6 mt-5">
+          <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-primary">Shto Klientin</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</html>

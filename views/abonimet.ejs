@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Abonime</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <%- include('partial/navbar.ejs') %>
+  <body>
+    <div class="container my-4">
+      <h3 class="header header-title bg-warning text-center">Abonime</h3>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <% abonimet.forEach(function(abonim) { %>
+        <div class="col">
+          <div class="card h-100 border-success">
+            <div class="card-header bg-success text-light">
+              <h5 class="card-title mb-0">Abonimi: <%= abonim.Abonim_id %></h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Kategoria: <%= abonim.Kategoria %></p>
+              <p class="card-text">
+                Klienti: <%= abonim.Emer %> <%= abonim.Mbiemer %>
+              </p>
+              <p class="card-text">Data fillimit: <%= abonim.Date_fillimi %></p>
+              <p class="card-text">Data mbarimit: <%= abonim.Date_mbarimi %></p>
+              
+              <div class="card-footer">  <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="<%= abonim.Abonim_id %>">Fshij</button></div>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Konfirmo fshirjen</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        A jeni i sigurt qe deshironi te fshini kete abonim?
+      </div>
+      <div class="modal-footer">
+        <form id="deleteForm" method="POST" action="/abonimet/delete">
+          <input type="hidden" name="abonim_id" id="abonim_id" value="">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anulo</button>
+          <button type="submit" class="btn btn-danger">Fshij</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  </body>
+  <style>
+    .card-header {
+      border-bottom: none;
+    }
+
+    .card-text {
+      color: #6c757d;
+    }
+
+    .card:hover {
+      border-color: #28a745;
+    }
+  </style><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+  const deleteModal = document.getElementById('deleteModal')
+  deleteModal.addEventListener('show.bs.modal', function (event) {
+    const button = event.relatedTarget
+    const abonimId = button.getAttribute('data-id').trim()
+    console.log(abonimId);
+    const modalForm = deleteModal.querySelector('#deleteForm')
+    const abonimIdInput = deleteModal.querySelector('#abonim_id');
+    var $ = jQuery.noConflict();
+      modalForm.setAttribute("action", "/abonimet/delete/" + abonimId);
+   
+    abonimIdInput.value = abonimId
+  })
+</script>
+
+</html>
+
+

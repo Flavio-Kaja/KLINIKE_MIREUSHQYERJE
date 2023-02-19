@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Punonjesi</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container py-5">
+      <h1 class="mb-4">Delete Punonjesi</h1>
+      <form method="POST">
+        <div class="mb-3">
+          <label for="confirmation" class="form-label"
+            >A jeni te sigurt qe doni te fshini punonjesin?</label
+          >
+          <p><strong><%= punonjesi.Emri %> <%= punonjesi.Mbiemri %></strong></p>
+        </div>
+        <input type="hidden" name="_method" value="DELETE" />
+        <button type="submit" class="btn btn-danger me-2">Fshij</button>
+        <a href="/punonjesi" class="btn btn-secondary">Kthehu</a>
+      </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

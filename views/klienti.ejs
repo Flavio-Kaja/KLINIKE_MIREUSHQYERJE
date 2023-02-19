@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Klientet</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css"
+    />
+  </head>
+  <%- include('partial/navbar.ejs') %>
+  <body>
+    <div class="container my-5">
+      <h1>Lista e klienteve</h1>
+      <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th style="width: 10%">Id</th>
+              <th style="width: 30%">Emer</th>
+              <th style="width: 30%">Mbiemer</th>
+              <th style="width: 5%">Gjinia</th>
+              <th style="min-width: 30%">Ditelindja</th>
+              <th style="width: 10%">Adresa</th>
+              <th style="width: 10%">Nr_telefoni</th>
+              <th style="width: 20%">Email</th>
+              <th style="width: 5%">Gjatesia</th>
+              <th style="width: 5%">Pesha</th>
+              <th style="width: 20%">Kondicioni fizik</th>
+              <th style="width: 20%">Aktiviteti</th>
+              <th style="width: 10%">Kalori ditore</th>
+              <th style="width: 10%">Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% klienti_specifikime.forEach(function(klienti) { %>
+            <tr>
+              <td><%= klienti.K_id %></td>
+              <td><%= klienti.Emer %></td>
+              <td><%= klienti.Mbiemer %></td>
+              <td><%= klienti.Gjinia %></td>
+              <td style="min-width: 120px"><%= klienti.Ditelindja %></td>
+              <td><%= klienti.Adresa %></td>
+              <td><%= klienti.Nr_telefoni %></td>
+              <td><%= klienti.Email %></td>
+              <td><%= klienti.Gjatesia %></td>
+              <td><%= klienti.Pesha %></td>
+              <td><%= klienti.Kondicioni_fizik %></td>
+              <td><%= klienti.Aktiviteti %></td>
+              <td><%= klienti.Kalori_ditore %></td>
+              <td>
+                <div class="d-flex justify-content-center">
+                  <a
+                    href="/klienti/edit/<%= klienti.K_id %>"
+                    class="btn btn-warning me-2"
+                  >
+                    <i class="bi bi-pencil-fill"></i> Edit
+                  </a>
+                  <form
+                    action="/klienti/delete/<%= klienti.K_id %>"
+                    method="post"
+                    class="d-inline-block"
+                  >
+                    <button type="submit" class="btn btn-danger">
+                      <i class="bi bi-trash-fill"></i> Delete
+                    </button>
+                  </form>
+                </div>
+              </td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
